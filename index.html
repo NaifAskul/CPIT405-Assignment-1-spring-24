@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Car Rental Form</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    
+    <body>
+ 
+        <h1>Car Rental Form</h1>
+        <form action="message.html" target="_blank">
+            <fieldset>
+
+            <label for="fname">First Name: <span id="star">*</span></label><br>
+            <input type="text" name="fn" id="fname" minlength="1" required><br>
+
+            <label for="lname">Last Name: <span id="star">*</span></label><br>
+            <input type="text" name="ln" id="lname" minlength="1" required><br>
+
+            <label for="email">email: <span id="star">*</span></label><br>
+            <input type="email" name="email" id="email" required><br>
+
+            <label for="Phone">Phone: <span id="star">*</span></label><br>
+            <input type="text" name="Ph" id="Phone" required><br>
+
+            <label for="dob">Date of Birth: <span id="star">*</span></label><br>
+            <input type="date" name="dob" id="dob" required><br>
+
+            <label for="ct">Car Type: <span id="star">*</span></label><br>
+            
+            <select name="CarT" id="ct">
+                <option value="s-sedan">
+                    small sedan
+                </option>
+
+                <option value="suv">
+                    suv
+                </option>
+
+                <option value="coupe">
+                    Coupe
+                </option>
+
+            </select><br>
+            
+            <label for="Rd">Rental Duration: <span id="star">*</span></label><br>
+            <input type="number" name="Rduration" id="Rd" required><br>
+
+                
+            <input type="checkbox" name="incov" id="in">
+            <label for="in">Add Comperehensive Insurance Coverage:</label><br>
+
+            <label for="rsd">Rental start date: <span id="star">*</span></label><br>
+            <input type="date" name="rsd" id="rsd" required><br>
+
+            <label for="red">Rental end date: <span id="star">*</span></label><br>
+            <input type="date" name="red" id="red" required><br>
+
+            <label for="AC">Additional Comments:</label><br>
+            
+            <textarea id="AC" name="AC" rows="6" cols="30"></textarea><br>
+
+            <span>Upload Driving License: <span id="star">*</span></span><br>
+
+            <button id="B" onclick="document.getElementById('DLimg').click(); return false;">Browse..</button>
+            <input type="file" name="DLimg" id="DLimg" accept="image/*, .pdf" required>
+            <span id="file-name">No file selected.</span><br>
+
+            <script>
+                document.getElementById('DLimg').addEventListener('change', function() {
+                    var fileName = this.files[0].name;
+                    document.getElementById('file-name').textContent = fileName;
+                });
+            </script>
+
+            <input type="submit" id="sub" value="Submit"><br>
+
+            </fieldset>
+
+        </form>
+
+    </body>
+
+</html>
